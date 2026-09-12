@@ -9,32 +9,32 @@
         android:id="@+id/iv_animal"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:paddingTop="20dp"
-        android:paddingBottom="70dp"
-        android:paddingStart="24dp"
-        android:paddingEnd="24dp"
-        android:scaleType="fitCenter" />
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@drawable/scrim_bottom" />
+        android:scaleType="centerCrop" />
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom"
+        android:layout_height="match_parent"
         android:orientation="vertical"
-        android:paddingStart="16dp"
-        android:paddingEnd="50dp"
-        android:paddingBottom="16dp">
+        android:gravity="center"
+        android:padding="16dp"
+        android:background="#B3090B10">
+
+        <TextView
+            android:id="@+id/tv_animal_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="FALCON"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/tv_mentality"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="3dp"
             android:text="FOCUS"
-            android:textColor="#D4AF37"
+            android:textColor="#FFD54F"
             android:textSize="12sp"
             android:textStyle="bold" />
 
@@ -42,10 +42,11 @@
             android:id="@+id/tv_quote"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="3dp"
+            android:layout_marginTop="8dp"
+            android:gravity="center"
             android:text="See clearly. Ignore the noise. Act with precision."
             android:textColor="#ECEFF1"
-            android:textSize="11sp" />
+            android:textSize="11.5sp" />
     </LinearLayout>
 
     <TextView
@@ -55,5 +56,5 @@
         android:layout_gravity="bottom|end"
         android:gravity="center"
         android:text="🎲"
-        android:textSize="20sp" />
+        android:textSize="22sp" />
 </FrameLayout>

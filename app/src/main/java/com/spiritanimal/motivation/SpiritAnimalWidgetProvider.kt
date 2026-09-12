@@ -6,10 +6,7 @@ import android.appwidget.AppWidgetProvider
 import android.content.ComponentName
 import android.content.Context
 import android.content.Intent
-import android.graphics.Bitmap
-import android.graphics.Canvas
 import android.widget.RemoteViews
-import androidx.core.content.ContextCompat
 
 class SpiritAnimalWidgetProvider : AppWidgetProvider() {
 
@@ -36,26 +33,15 @@ class SpiritAnimalWidgetProvider : AppWidgetProvider() {
     companion object {
         const val ACTION_RANDOMIZE = "com.spiritanimal.motivation.ACTION_RANDOMIZE"
 
-        private fun getVectorBitmap(context: Context, drawableResId: Int): Bitmap? {
-            val drawable = ContextCompat.getDrawable(context, drawableResId) ?: return null
-            val bitmap = Bitmap.createBitmap(300, 300, Bitmap.Config.ARGB_8888)
-            val canvas = Canvas(bitmap)
-            drawable.setBounds(0, 0, canvas.width, canvas.height)
-            drawable.draw(canvas)
-            return bitmap
-        }
-
         fun render(context: Context, manager: AppWidgetManager, id: Int, animal: Animal) {
             val views = RemoteViews(context.packageName, R.layout.widget_spirit_animal).apply {
+                setTextViewText(R.id.tv_animal_name, animal.name)
                 setTextViewText(R.id.tv_mentality, animal.mentality)
                 setTextViewText(R.id.tv_quote, animal.message)
 
                 val resId = context.resources.getIdentifier(animal.drawableResName, "drawable", context.packageName)
                 if (resId != 0) {
-                    val bitmap = getVectorBitmap(context, resId)
-                    if (bitmap != null) {
-                        setImageViewBitmap(R.id.iv_animal, bitmap)
-                    }
+                    setImageViewResource(R.id.iv_animal, resId)
                 }
 
                 val randIntent = Intent(context, SpiritAnimalWidgetProvider::class.java).apply {
