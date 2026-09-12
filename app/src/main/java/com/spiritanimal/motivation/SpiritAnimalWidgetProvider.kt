@@ -30,7 +30,6 @@ class SpiritAnimalWidgetProvider : AppWidgetProvider() {
 
         fun render(context: Context, manager: AppWidgetManager, id: Int, animal: Animal) {
             val views = RemoteViews(context.packageName, R.layout.widget_spirit_animal).apply {
-                setTextViewText(R.id.tv_animal_name, animal.name)
                 setTextViewText(R.id.tv_mentality, animal.mentality)
                 setTextViewText(R.id.tv_quote, animal.message)
 
