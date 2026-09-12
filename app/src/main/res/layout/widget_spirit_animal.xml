@@ -11,14 +11,14 @@
         android:orientation="horizontal"
         android:gravity="center_vertical"
         android:paddingStart="16dp"
-        android:paddingEnd="34dp"
-        android:paddingTop="10dp"
-        android:paddingBottom="10dp">
+        android:paddingEnd="36dp"
+        android:paddingTop="12dp"
+        android:paddingBottom="12dp">
 
         <ImageView
             android:id="@+id/iv_animal"
-            android:layout_width="84dp"
-            android:layout_height="84dp"
+            android:layout_width="88dp"
+            android:layout_height="88dp"
             android:scaleType="fitCenter" />
 
         <LinearLayout
@@ -33,24 +33,24 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="#FFD54F"
-                android:textSize="16sp"
+                android:textSize="15sp"
                 android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/tv_quote"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
+                android:layout_marginTop="5dp"
                 android:textColor="#ECEFF1"
-                android:textSize="12.5sp"
-                android:lineSpacingExtra="1.5dp" />
+                android:textSize="12sp"
+                android:lineSpacingExtra="2dp" />
         </LinearLayout>
     </LinearLayout>
 
     <TextView
         android:id="@+id/btn_randomize"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
+        android:layout_width="42dp"
+        android:layout_height="42dp"
         android:layout_gravity="bottom|end"
         android:gravity="center"
         android:text="🎲"
