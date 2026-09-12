@@ -1,1 +1,5 @@
-<resources><style name="Theme.SpiritAnimal" parent="Theme.MaterialComponents.DayNight.NoActionBar"><item name="android:windowBackground">#0F1117</item></style></resources>
+<resources>
+    <style name="Theme.SpiritAnimal" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="android:windowBackground">#0F1117</item>
+    </style>
+</resources>

@@ -7,15 +7,11 @@ import android.content.ComponentName
 import android.content.Context
 import android.content.Intent
 import android.widget.RemoteViews
-import com.spiritanimal.motivation.R
 
 class SpiritAnimalWidgetProvider : AppWidgetProvider() {
-
     override fun onUpdate(context: Context, appWidgetManager: AppWidgetManager, appWidgetIds: IntArray) {
         val repo = AnimalRepository(context)
-        for (id in appWidgetIds) {
-            render(context, appWidgetManager, id, repo.getCurrent())
-        }
+        for (id in appWidgetIds) render(context, appWidgetManager, id, repo.getCurrent())
     }
 
     override fun onReceive(context: Context, intent: Intent) {
@@ -25,9 +21,7 @@ class SpiritAnimalWidgetProvider : AppWidgetProvider() {
             val nextAnimal = repo.pickRandom()
             val manager = AppWidgetManager.getInstance(context)
             val ids = manager.getAppWidgetIds(ComponentName(context, SpiritAnimalWidgetProvider::class.java))
-            for (id in ids) {
-                render(context, manager, id, nextAnimal)
-            }
+            for (id in ids) render(context, manager, id, nextAnimal)
         }
     }
 
@@ -41,24 +35,14 @@ class SpiritAnimalWidgetProvider : AppWidgetProvider() {
                 setTextViewText(R.id.tv_quote, animal.message)
 
                 val resId = context.resources.getIdentifier(animal.drawableResName, "drawable", context.packageName)
-                if (resId != 0) {
-                    setImageViewResource(R.id.iv_animal, resId)
-                }
+                if (resId != 0) setImageViewResource(R.id.iv_animal, resId)
 
-                val randIntent = Intent(context, SpiritAnimalWidgetProvider::class.java).apply {
-                    action = ACTION_RANDOMIZE
-                }
-                val pendingRand = PendingIntent.getBroadcast(
-                    context, 0, randIntent,
-                    PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE
-                )
+                val randIntent = Intent(context, SpiritAnimalWidgetProvider::class.java).apply { action = ACTION_RANDOMIZE }
+                val pendingRand = PendingIntent.getBroadcast(context, 0, randIntent, PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE)
                 setOnClickPendingIntent(R.id.btn_randomize, pendingRand)
 
                 val appIntent = Intent(context, MainActivity::class.java)
-                val pendingApp = PendingIntent.getActivity(
-                    context, 1, appIntent,
-                    PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE
-                )
+                val pendingApp = PendingIntent.getActivity(context, 1, appIntent, PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE)
                 setOnClickPendingIntent(R.id.widget_root, pendingApp)
             }
             manager.updateAppWidget(id, views)
