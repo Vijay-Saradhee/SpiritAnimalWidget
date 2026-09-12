@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" android:id="@+id/widget_root" android:layout_width="match_parent" android:layout_height="match_parent" android:background="@drawable/widget_bg" android:clipToOutline="true">
+  <ImageView android:id="@+id/iv_animal" android:layout_width="match_parent" android:layout_height="match_parent" android:scaleType="centerCrop"/>
+  <View android:layout_width="match_parent" android:layout_height="match_parent" android:background="#AA000000"/>
+  <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent" android:orientation="vertical" android:gravity="center" android:padding="12dp">
+    <TextView android:id="@+id/tv_animal_name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="FALCON" android:textColor="#FFFFFF" android:textSize="18sp" android:textStyle="bold" android:letterSpacing="0.12"/>
+    <TextView android:id="@+id/tv_mentality" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2dp" android:text="FOCUS" android:textColor="#FFD54F" android:textSize="12sp" android:textStyle="bold" android:letterSpacing="0.18"/>
+    <TextView android:id="@+id/tv_quote" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginTop="6dp" android:gravity="center" android:text="See clearly. Ignore the noise. Act with precision." android:textColor="#EEEEEE" android:textSize="11sp"/>
+  </LinearLayout>
+  <TextView android:id="@+id/btn_randomize" android:layout_width="38dp" android:layout_height="38dp" android:layout_alignParentEnd="true" android:layout_alignParentBottom="true" android:gravity="center" android:text="🎲" android:textSize="20sp"/>
+</RelativeLayout>
