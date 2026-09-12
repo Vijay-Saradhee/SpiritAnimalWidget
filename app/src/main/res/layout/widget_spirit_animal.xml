@@ -5,56 +5,54 @@
     android:layout_height="match_parent"
     android:background="@drawable/widget_bg">
 
-    <ImageView
-        android:id="@+id/iv_animal"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:scaleType="centerCrop" />
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:gravity="center"
-        android:padding="16dp"
-        android:background="#B3090B10">
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingStart="16dp"
+        android:paddingEnd="34dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp">
 
-        <TextView
-            android:id="@+id/tv_animal_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="FALCON"
-            android:textColor="#FFFFFF"
-            android:textSize="18sp"
-            android:textStyle="bold" />
+        <ImageView
+            android:id="@+id/iv_animal"
+            android:layout_width="84dp"
+            android:layout_height="84dp"
+            android:scaleType="fitCenter" />
 
-        <TextView
-            android:id="@+id/tv_mentality"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="3dp"
-            android:text="FOCUS"
-            android:textColor="#FFD54F"
-            android:textSize="12sp"
-            android:textStyle="bold" />
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_marginStart="16dp">
 
-        <TextView
-            android:id="@+id/tv_quote"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:gravity="center"
-            android:text="See clearly. Ignore the noise. Act with precision."
-            android:textColor="#ECEFF1"
-            android:textSize="11.5sp" />
+            <TextView
+                android:id="@+id/tv_mentality"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#FFD54F"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_quote"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:textColor="#ECEFF1"
+                android:textSize="12.5sp"
+                android:lineSpacingExtra="1.5dp" />
+        </LinearLayout>
     </LinearLayout>
 
     <TextView
         android:id="@+id/btn_randomize"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
         android:layout_gravity="bottom|end"
         android:gravity="center"
         android:text="🎲"
-        android:textSize="22sp" />
+        android:textSize="17sp" />
 </FrameLayout>
